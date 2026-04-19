@@ -19,8 +19,8 @@ description: Build project, draft commit message, confirm before commit, push br
 
 # Do
 
-1. Preflight checks: verify clean git status expectations, ensure branch context is explicit, detect build command automatically, run build, and stop on any build failure.
-	Use [build detection script](./scripts/detect-build-command.sh) and report detected command.
+1. Preflight checks: verify clean git status expectations, ensure branch context is explicit, detect build command automatically, run build, detect test command automatically by project type, then run tests, and stop on any build or test failure.
+	Use [build detection script](./scripts/detect-build-command.sh) and [test detection script](./scripts/detect-test-command.sh), then report detected commands.
 2. Summarize staged or unstaged changes, generate a draft commit message with Conventional Commits, and ask user to approve or edit it before committing.
 	Use [commit template](./templates/commit-message-template.md) as default format.
 3. Commit using approved message, push to remote branch, and handle branch-upstream setup if needed.
@@ -33,6 +33,7 @@ description: Build project, draft commit message, confirm before commit, push br
 
 - One execution summary including:
 - Build command and pass or fail result.
+- Test command and pass or fail result.
 - Final commit message and commit hash.
 - Remote branch and push status.
 - PR link, selected reviewers, and next actions.
@@ -40,7 +41,7 @@ description: Build project, draft commit message, confirm before commit, push br
 # Rules
 
 - Never commit, push, or create PR without explicit user confirmation at required checkpoints.
-- If build fails, stop and report failure context instead of forcing later git steps.
+- If build or test fails, stop and report failure context instead of forcing later git steps.
 - If no changes are present, stop and report nothing-to-commit.
 - If reviewer candidate listing fails, fall back to user-provided names.
 - If reviewer selection is empty, ask user to proceed with no reviewers or provide names.
