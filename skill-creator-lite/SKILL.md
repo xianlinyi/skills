@@ -2,6 +2,7 @@
 name: skill-creator-lite
 description: Create, update, refactor, simplify, slim down, split, externalize, scriptify, and standardize GitHub Copilot or Codex skills. Use when creating a new skill, rewriting an existing SKILL.md for better triggering, reducing token usage, moving bulky references/config/templates into supporting files, moving repeatable logic into scripts, or enforcing a minimal skill structure.
 allowed-tools:
+  - shell
   - bash
   - create
   - edit

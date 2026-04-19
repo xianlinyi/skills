@@ -2,6 +2,7 @@
 name: submit-pr-watch
 description: Submit a pull request, assign reviewers (with multi-select if none provided), then optionally watch and report when the PR is merged or closed. Use for create PR, open PR, submit PR, monitor PR, wait for merge, PR merged, assign reviewer.
 allowed-tools:
+  - shell
   - bash
   - ask_user
 ---
