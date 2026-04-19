@@ -1,6 +1,12 @@
 ---
 name: build-commit-pr
 description: Build project, draft commit message, confirm before commit, push branch, create PR, and select reviewers. Use for release prep, daily publish flow, git automation with human confirmation, and safe CI handoff.
+tools:
+  - bash
+  - ask_user
+  - view
+  - glob
+  - grep
 ---
 
 # Build To PR
