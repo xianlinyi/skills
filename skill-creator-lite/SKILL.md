@@ -1,6 +1,12 @@
 ---
 name: skill-creator-lite
 description: Create, update, refactor, simplify, slim down, split, externalize, scriptify, and standardize GitHub Copilot or Codex skills. Use when creating a new skill, rewriting an existing SKILL.md for better triggering, reducing token usage, moving bulky references/config/templates into supporting files, moving repeatable logic into scripts, or enforcing a minimal skill structure.
+tools:
+  - bash
+  - create
+  - edit
+  - view
+  - ask_user
 ---
 
 # Use when
@@ -45,3 +51,4 @@ description: Create, update, refactor, simplify, slim down, split, externalize, 
 - Limit examples to zero or one minimal positive example unless the user explicitly asks for more.
 - Put new-skill standard directory creation in `scripts/scaffold-skill.sh`; add `config/` only when the new skill needs real configuration.
 - Read `references/design-principles.md` for design tradeoffs and `references/common-pitfalls.md` when reviewing an existing skill.
+- **Always declare a `tools` list in the SKILL.md frontmatter** for every new skill. Enumerate only the tools the skill actually invokes (e.g. `bash`, `create`, `edit`, `view`, `glob`, `grep`, `ask_user`). Never grant tools not needed by the skill's steps.
