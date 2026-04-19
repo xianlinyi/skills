@@ -1,7 +1,7 @@
 ---
 name: commit
 description: Generate commit message, confirm with user, commit changes, and push branch. Use for conventional commit, stage changes, draft commit, commit and push, confirm before commit, git commit workflow.
-tools:
+allowed-tools:
   - bash
   - ask_user
   - view
